@@ -6,7 +6,59 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Tailwind CSS</title>
   </head>
-  <body>
-    <h1>Hello World</h1>
+  <body class="bg-gray-900">
+    <div class="container mx-auto">
+      <section
+        class="min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 py-8 lg:py-0 text-white gap-8 lg:gap-16 container mx-auto"
+      >
+        <!-- Left Content -->
+        <div class="flex-1 max-w-2xl text-center lg:text-left">
+          <img
+            src="/images/huberman_lab_logo-removebg-preview.png"
+            alt="Huberman Lab Logo"
+            width="200"
+            height="60"
+            class="w-60 h-auto mb-6"
+            loading="eager"
+          />
+          <h1
+            class="text-slate-100 text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight"
+          >
+            Tools for the Mind & Body
+          </h1>
+          <p
+            class="text-gray-300 text-base md:text-lg lg:text-xl mb-8 leading-relaxed max-w-2xl"
+          >
+            The Huberman Lab Podcast discusses science and science-based tools
+            for everyday life — focusing on neuroscience, health, performance,
+            and well-being.
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="https://www.hubermanlab.com/"
+              class="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-colors duration-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 focus:outline-none"
+            >
+              Explore Episodes
+            </a>
+            <a
+              href="https://www.youtube.com/@hubermanlab"
+              class="px-8 py-4 bg-red-600 hover:bg-red-700 rounded-lg font-semibold transition-colors duration-5 00 focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-900 focus:outline-none"
+            >
+              Watch on YouTube
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Image-->
+        <div class="flex-1 flex justify-center order-first lg:order-last">
+          <img
+            src="/images/Dr. Andrew Huberman BG removed.png"
+            alt="Dr. Andrew Huberman"
+            class="w-64 md:w-96 lg:w-128 h-auto transform hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+          />
+        </div>
+      </section>
+    </div>
   </body>
 </html>
