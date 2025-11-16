@@ -4,21 +4,132 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Tailwind CSS</title>
+    <title>Huberman Lab Podcast - Science-Based Tools for Everyday Life</title>
   </head>
   <body class="bg-gray-900">
     <div class="container mx-auto">
+      <!-- Navigation Header -->
+      <header
+        class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800"
+      >
+        <nav class="container mx-auto px-4 py-4">
+          <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-3">
+              <img
+                src="/images/huberman_lab_logo-removebg-preview.png"
+                alt="Huberman Lab Podcast"
+                class="w-10 h-10"
+              />
+              <span class="text-xl font-bold text-white">Huberman Lab</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+              <a
+                href="#episodes"
+                class="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+              >
+                Episodes
+              </a>
+              <a
+                href="#protocols"
+                class="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+              >
+                Protocols
+              </a>
+              <a
+                href="#about"
+                class="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+              >
+                About
+              </a>
+              <a
+                href="#resources"
+                class="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+              >
+                Resources
+              </a>
+              <a
+                href="https://youtube.com/@hubermanlab"
+                target="_blank"
+                class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200"
+              >
+                Watch Now
+              </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button
+              class="md:hidden text-gray-300 hover:text-white focus:outline-none"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Mobile Navigation (Hidden by default) -->
+          <div class="md:hidden mt-4 hidden" id="mobile-menu">
+            <div class="flex flex-col space-y-4 pb-4">
+              <a
+                href="#episodes"
+                class="text-gray-300 hover:text-white transition-colors duration-200 font-medium py-2 relative"
+              >
+                Episodes
+              </a>
+              <a
+                href="#protocols"
+                class="text-gray-300 hover:text-white transition-colors duration-200 font-medium py-2"
+              >
+                Protocols
+              </a>
+              <a
+                href="#about"
+                class="text-gray-300 hover:text-white transition-colors duration-200 font-medium py-2"
+              >
+                About
+              </a>
+              <a
+                href="#resources"
+                class="text-gray-300 hover:text-white transition-colors duration-200 font-medium py-2"
+              >
+                Resources
+              </a>
+              <a
+                href="https://youtube.com/hubermanlab"
+                target="_blank"
+                class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 text-center"
+              >
+                Watch Now
+              </a>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Hero Section -->
       <section
         class="min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 py-8 lg:py-0 text-white gap-8 lg:gap-16 container mx-auto"
       >
         <!-- Left Content -->
-        <div class="flex-1 max-w-2xl text-center lg:text-left">
+        <div class="flex-1 max-w-2xl text-center lg:text-left mt-8 lg:mt-0">
           <img
             src="/images/huberman_lab_logo-removebg-preview.png"
             alt="Huberman Lab Logo"
             width="200"
             height="60"
-            class="w-60 h-auto mb-6"
+            class="w-60 h-auto mb-8 mx-auto lg:mx-0 hidden lg:block"
             loading="eager"
           />
           <h1
@@ -33,7 +144,9 @@
             for everyday life — focusing on neuroscience, health, performance,
             and well-being.
           </p>
-          <div class="flex gap-4">
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start4"
+          >
             <a
               href="https://www.hubermanlab.com/"
               class="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-colors duration-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 focus:outline-none"
@@ -50,15 +163,28 @@
         </div>
 
         <!-- Right Image-->
-        <div class="flex-1 flex justify-center order-first lg:order-last">
+        <div class="flex justify-center order-first lg:order-last">
           <img
             src="/images/Dr. Andrew Huberman BG removed.png"
             alt="Dr. Andrew Huberman"
-            class="w-64 md:w-96 lg:w-128 h-auto transform hover:scale-105 transition-transform duration-300"
+            class="w-72 md:w-96 lg:w-128 h-auto transform hover:scale-105 transition-transform duration-300"
             loading="lazy"
           />
         </div>
       </section>
     </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.querySelector(
+          'button[class*="md:hidden"]'
+        );
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
+      });
+    </script>
   </body>
 </html>
