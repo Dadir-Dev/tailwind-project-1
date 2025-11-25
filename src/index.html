@@ -1038,9 +1038,22 @@
         );
         const mobileMenu = document.getElementById("mobile-menu");
 
-        mobileMenuButton.addEventListener("click", function () {
-          mobileMenu.classList.toggle("hidden");
-        });
+        if (mobileMenuButton) {
+          mobileMenuButton.addEventListener("click", function () {
+            mobileMenu.classList.toggle("hidden");
+          });
+        }
+
+        // Hide the mobile menu when any link inside it is clicked.
+        // This makes in-page anchor navigation close the menu automatically.
+        if (mobileMenu) {
+          const mobileLinks = mobileMenu.querySelectorAll("a");
+          mobileLinks.forEach((link) => {
+            link.addEventListener("click", function () {
+              mobileMenu.classList.add("hidden");
+            });
+          });
+        }
       });
     </script>
   </body>
